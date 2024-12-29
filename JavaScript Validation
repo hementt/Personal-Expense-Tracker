@@ -1,0 +1,72 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const addExpenseButton = document.querySelector(".add-expense");
+  const calculateTotalButton = document.querySelector(".calculate-total");
+  const expenseList = document.querySelector(".expense-list");
+
+  let expenses = [];
+
+  // Add Expense
+  addExpenseButton.addEventListener("click", () => {
+    const category = document.querySelector("#category").value.trim();
+    const amount = parseFloat(document.querySelector("#amount").value);
+    const date = document.querySelector("#date").value;
+    const description = document.querySelector("#description").value.trim();
+
+    // Validate inputs
+    if (!category || isNaN(amount) || amount <= 0 || !date || !description) {
+      alert("Please fill out all fields correctly.");
+      return;
+    }
+
+    // Add expense to the list
+    const expense = { category, amount, date, description };
+    expenses.push(expense);
+
+    // Update the expense list UI
+    updateExpenseList(expenses);
+
+    // Clear the input fields
+    document.querySelector("#category").value = "";
+    document.querySelector("#amount").value = "";
+    document.querySelector("#date").value = "";
+    document.querySelector("#description").value = "";
+  });
+
+  // Calculate Total
+  calculateTotalButton.addEventListener("click", () => {
+    if (expenses.length === 0) {
+      alert("No expenses added yet!");
+      return;
+    }
+
+    const totalAmount = expenses.reduce((total, expense) => total + expense.amount, 0);
+    alert(`Total Expenses: $${totalAmount.toFixed(2)}`);
+  });
+
+  // Update the expense list UI
+  function updateExpenseList(expenses) {
+    expenseList.innerHTML = ""; // Clear the list
+
+    expenses.forEach((expense, index) => {
+      const expenseItem = document.createElement("div");
+      expenseItem.classList.add("expense-item");
+      expenseItem.innerHTML = `
+        <p><strong>${expense.category}</strong> - $${expense.amount.toFixed(2)}</p>
+        <p>${expense.date}</p>
+        <p>${expense.description}</p>
+        <button class="delete-btn" data-index="${index}">Delete</button>
+      `;
+      expenseList.appendChild(expenseItem);
+    });
+
+    // Add delete functionality
+    const deleteButtons = document.querySelectorAll(".delete-btn");
+    deleteButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const index = e.target.getAttribute("data-index");
+        expenses.splice(index, 1);
+        updateExpenseList(expenses);
+      });
+    });
+  }
+});
