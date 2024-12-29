@@ -1,0 +1,120 @@
+Personal Expense Tracker
+
+A simple web application to track your daily expenses. You can add, view, and delete expenses, as well as calculate the total of all your expenses. This project is created using **HTML**, **CSS**, and **JavaScript** for functionality and design.
+
+---
+
+## Features
+- **Add Expense**: Add a new expense by providing the category, amount, date, and description.
+- **View Expense List**: View all your expenses in a scrollable list.
+- **Delete Expense**: Remove individual expenses from the list.
+- **Calculate Total**: Calculate the total of all added expenses.
+
+---
+
+## Project Structure
+
+```
+spending-tracker/
+├── index.html       # Main HTML file
+├── styles.css       # Custom CSS for styling
+├── script.js        # JavaScript for functionality
+```
+
+---
+
+## Setup Instructions
+
+
+1. **File Structure**:
+   Ensure the files are placed in the same folder:
+   - `index.html`
+   - `styles.css`
+   - `script.js`
+
+2. **Open the Project**:
+   Open the `index.html` file in any web browser to run the application.
+
+---
+
+## Usage Guide
+
+### 1. **Add Expense**
+   - Fill out the following fields:
+     - **Category**: The type of expense (e.g., Food, Rent).
+     - **Amount**: The cost of the expense.
+     - **Date**: The date the expense was made.
+     - **Description**: Additional details about the expense.
+   - Click on the **"Add Expense"** button to add it to the list.
+
+### 2. **View Expense List**
+   - Added expenses will appear in the list below the form.
+   - Each expense will show:
+     - Category
+     - Amount
+     - Date
+     - Description
+
+### 3. **Delete Expense**
+   - Click the **"Delete"** button next to an expense to remove it from the list.
+
+### 4. **Calculate Total**
+   - Click the **"Calculate Total"** button to see the total sum of all added expenses.
+   - A popup alert will display the total.
+
+---
+
+## Technologies Used
+
+1. **HTML**: For the structure of the web page.
+2. **CSS**: For styling and layout.
+   - Includes custom styles for modern design.
+3. **JavaScript**: For dynamic functionality.
+   - Adds, removes, and calculates expenses.
+
+---
+
+## Code Overview
+
+### HTML (`index.html`)
+- Contains the structure of the Spending Tracker.
+- Includes input fields for **Category**, **Amount**, **Date**, and **Description**.
+- Includes buttons for adding expenses and calculating the total.
+
+### CSS (`styles.css`)
+- Provides styling for:
+  - The layout and design of the app.
+  - Buttons, input fields, and the expense list.
+- Customizes the app for a clean and modern look.
+
+### JavaScript (`script.js`)
+- Implements the core functionality:
+  - Validates inputs before adding an expense.
+  - Dynamically updates the expense list.
+  - Deletes individual expenses.
+  - Calculates the total expense amount.
+
+---
+
+## Example Screenshot
+The interface includes:
+- A **header** with the app title.
+- Input fields and buttons.
+- A **scrollable expense list** with added expenses.
+
+---
+
+## Live Demo
+To see a live demo, open the `index.html` file in any browser. Alternatively, host it on any web hosting platform (e.g., GitHub Pages).
+
+---
+
+## Contributions
+Feel free to fork the project and contribute! Submit a pull request with any improvements or new features.
+
+---
+
+## License
+This project is free to use and distribute. No license is required.
+
+---
